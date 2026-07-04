@@ -4,6 +4,7 @@ import { Plus, Pencil, Trash2, Search } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatusBadge } from "@/components/StatusBadge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -75,9 +76,9 @@ const empty = (): FormState => ({
 });
 
 function subscriptionFlagClass(status: ReturnType<typeof clientStatus>) {
-  if (status === "Expired" || status === "Unpaid") return "border-l-4 border-l-rose-500 bg-rose-50/70 dark:bg-rose-500/10";
-  if (status === "Expiring soon") return "border-l-4 border-l-amber-400 bg-amber-50/70 dark:bg-amber-500/10";
-  return "border-l-4 border-l-emerald-500 bg-emerald-50/60 dark:bg-emerald-500/10";
+  if (status === "Expired" || status === "Unpaid") return "border-l-4 border-l-accent-red bg-accent-red/10";
+  if (status === "Expiring soon") return "border-l-4 border-l-accent-yellow bg-accent-yellow/10";
+  return "border-l-4 border-l-accent-green bg-accent-green/10";
 }
 
 function assuranceFlagClass(status: ReturnType<typeof assuranceStatus>) {
@@ -335,9 +336,7 @@ function ClientsPage() {
                 );
               })}
               {!isLoading && filtered.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={9} className="py-10 text-center text-muted-foreground">{t("clients.noClients")}</TableCell>
-                </TableRow>
+                <EmptyState colSpan={9} message={t("clients.noClients")} />
               )}
             </TableBody>
           </Table>

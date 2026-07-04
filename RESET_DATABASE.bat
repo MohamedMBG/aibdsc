@@ -1,7 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title Gym System - Reset Database
+title AIBDSC - Reset Database
 
 echo ==========================================================
 echo   WARNING - RESET DATABASE
@@ -42,7 +42,7 @@ start "" http://localhost:5173
 echo.
 echo ==========================================================
 echo   Done. The database is fresh and empty.
-echo   Login email:     admin@gym.local
+echo   Login email:     admin@aibdsc.local
 echo   Login password:  admin12345
 echo ==========================================================
 echo.

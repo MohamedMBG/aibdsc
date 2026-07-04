@@ -4,6 +4,7 @@ import { Pencil, Plus, Trash2, BadgePercent, Users, DollarSign, Trophy } from "l
 import { toast } from "sonner";
 import { z } from "zod";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatusBadge } from "@/components/StatusBadge";
 import { StatCard } from "@/components/StatCard";
 import { Button } from "@/components/ui/button";
@@ -206,7 +207,7 @@ function OffersPage() {
                   </TableCell>
                   <TableCell className="font-semibold">{formatCurrency(revenue, currency)}</TableCell>
                   <TableCell className="hidden md:table-cell">
-                    <span className={health === "Going well" ? "font-semibold text-emerald-700 dark:text-emerald-400" : health === "Needs push" ? "font-semibold text-amber-700 dark:text-amber-400" : "font-semibold text-rose-700 dark:text-rose-400"}>
+                    <span className={health === "Going well" ? "font-semibold text-accent-green" : health === "Needs push" ? "font-semibold text-accent-yellow" : "font-semibold text-accent-red"}>
                       {t(`health.${health}`)}
                     </span>
                   </TableCell>
@@ -217,9 +218,7 @@ function OffersPage() {
                 </TableRow>
               ))}
               {!isLoading && offers.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={7} className="py-8 text-center text-muted-foreground">{t("offers.noOffers")}</TableCell>
-                </TableRow>
+                <EmptyState colSpan={7} message={t("offers.noOffers")} />
               )}
             </TableBody>
           </Table>

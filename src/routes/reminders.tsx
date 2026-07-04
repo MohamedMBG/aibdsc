@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Mail, Send, Eye } from "lucide-react";
 import { toast } from "sonner";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatusBadge } from "@/components/StatusBadge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -126,9 +127,7 @@ function RemindersPage() {
                 </TableRow>
               ))}
               {history.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={4} className="py-8 text-center text-muted-foreground">{t("reminders.noHistory")}</TableCell>
-                </TableRow>
+                <EmptyState colSpan={4} message={t("reminders.noHistory")} />
               )}
             </TableBody>
           </Table>

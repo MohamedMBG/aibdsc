@@ -1,10 +1,10 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title Gym System - Starting
+title AIBDSC - Starting
 
 echo ==========================================================
-echo   Starting your Gym Management System
+echo   Starting AIBDSC Management Platform
 echo ==========================================================
 echo.
 
@@ -62,7 +62,7 @@ echo ==========================================================
 echo   The system is running!
 echo.
 echo   Open in your browser:  http://localhost:5173
-echo   Login email:           admin@gym.local
+echo   Login email:           admin@aibdsc.local
 echo   Login password:        admin12345
 echo.
 echo   To stop it later, run STOP_SYSTEM.bat

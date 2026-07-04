@@ -4,6 +4,7 @@ import { Package, Pencil, Plus, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatCard } from "@/components/StatCard";
 import { StatusBadge } from "@/components/StatusBadge";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
@@ -187,9 +188,7 @@ function PacksPage() {
                 </TableRow>
               ))}
               {!isLoading && packs.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={6} className="py-8 text-center text-muted-foreground">{t("packs.noPacks")}</TableCell>
-                </TableRow>
+                <EmptyState colSpan={6} message={t("packs.noPacks")} />
               )}
             </TableBody>
           </Table>

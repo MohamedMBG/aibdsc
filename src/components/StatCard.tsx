@@ -19,9 +19,9 @@ export function StatCard({ label, value, icon: Icon, hint, variant = "white" }: 
         isBrand
           ? "bg-gradient-brand-strong text-white"
           : variant === "warning"
-            ? "bg-gradient-to-br from-amber-50 to-yellow-100 text-amber-950"
+            ? "bg-gradient-to-br from-accent-yellow/15 to-accent-yellow/25 text-foreground"
             : variant === "danger"
-              ? "bg-gradient-to-br from-rose-50 to-orange-100 text-rose-950"
+              ? "bg-gradient-to-br from-accent-red/10 to-accent-red/20 text-foreground"
               : "bg-card text-foreground",
       )}
     >
@@ -30,7 +30,7 @@ export function StatCard({ label, value, icon: Icon, hint, variant = "white" }: 
           <div
             className={cn(
               "text-xs font-semibold uppercase tracking-wider",
-              isBrand ? "text-white/80" : variant === "warning" ? "text-amber-950/70" : variant === "danger" ? "text-rose-950/70" : "text-muted-foreground",
+              isBrand ? "text-white/80" : variant === "warning" || variant === "danger" ? "text-foreground/70" : "text-muted-foreground",
             )}
           >
             {label}
@@ -40,7 +40,7 @@ export function StatCard({ label, value, icon: Icon, hint, variant = "white" }: 
             <div
               className={cn(
                 "mt-1 text-xs",
-                isBrand ? "text-white/80" : variant === "warning" ? "text-amber-950/70" : variant === "danger" ? "text-rose-950/70" : "text-muted-foreground",
+                isBrand ? "text-white/80" : variant === "warning" || variant === "danger" ? "text-foreground/70" : "text-muted-foreground",
               )}
             >
               {hint}

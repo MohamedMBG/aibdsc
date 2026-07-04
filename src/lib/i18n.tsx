@@ -4,7 +4,7 @@ export type Locale = "en" | "fr";
 
 type Dictionary = Record<string, { en: string; fr: string }>;
 
-const STORAGE_KEY = "7up_locale";
+const STORAGE_KEY = "aibdsc_locale";
 
 const dictionary: Dictionary = {
   "app.adminSuite": { en: "Admin Suite", fr: "Suite admin" },
@@ -172,7 +172,7 @@ const dictionary: Dictionary = {
   "settings.dangerZone": { en: "Danger zone", fr: "Zone dangereuse" },
   "settings.signOutDescription": { en: "Sign out of your account.", fr: "Deconnectez-vous de votre compte." },
   "login.signIn": { en: "Sign in", fr: "Connexion" },
-  "login.subtitle": { en: "Seven Up Gym Management", fr: "Gestion Seven Up Gym" },
+  "login.subtitle": { en: "Association Ibn Al Bannae de Développement Sportif et Culturel", fr: "Association Ibn Al Bannae de Développement Sportif et Culturel" },
   "login.signingIn": { en: "Signing in...", fr: "Connexion..." },
   "login.firstTime": { en: "First time?", fr: "Premiere fois ?" },
   "login.setupGym": { en: "Set up your gym", fr: "Configurer votre salle" },

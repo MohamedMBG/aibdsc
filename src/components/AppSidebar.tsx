@@ -47,8 +47,8 @@ export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
       <div className="flex items-center gap-3 px-6 py-6">
         <BusinessLogo className="h-12 w-12 shrink-0" />
         <div>
-          <div className="text-lg font-extrabold tracking-tight">
-            <span className="text-gradient-brand">Seven Up</span> Gym
+          <div className="text-lg font-extrabold tracking-tight text-sidebar-foreground">
+            AIBDSC
           </div>
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
             {t("app.adminSuite")}

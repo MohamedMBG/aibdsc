@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { Users, CalendarDays, CalendarRange, DollarSign, AlertTriangle, Clock, UserPlus, CreditCard, Send, ArrowRight, BadgePercent } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatusBadge } from "@/components/StatusBadge";
 import { Card } from "@/components/ui/card";
 import {
@@ -159,18 +160,18 @@ function Dashboard() {
               <AreaChart data={monthsData} margin={{ left: 0, right: 8, top: 8, bottom: 0 }}>
                 <defs>
                   <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="oklch(0.78 0.18 60)" stopOpacity={0.7} />
-                    <stop offset="100%" stopColor="oklch(0.86 0.17 88)" stopOpacity={0.05} />
+                    <stop offset="0%" stopColor="var(--chart-1)" stopOpacity={0.7} />
+                    <stop offset="100%" stopColor="var(--chart-2)" stopOpacity={0.05} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.93 0.01 80)" />
-                <XAxis dataKey="month" stroke="oklch(0.5 0.03 60)" fontSize={12} />
-                <YAxis stroke="oklch(0.5 0.03 60)" fontSize={12} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                <XAxis dataKey="month" stroke="var(--muted-foreground)" fontSize={12} />
+                <YAxis stroke="var(--muted-foreground)" fontSize={12} />
                 <Tooltip
-                  contentStyle={{ borderRadius: 12, border: "1px solid oklch(0.93 0.01 80)", boxShadow: "0 8px 24px -12px rgba(0,0,0,0.15)" }}
+                  contentStyle={{ borderRadius: 12, border: "1px solid var(--border)", boxShadow: "0 8px 24px -12px rgba(0,0,0,0.15)" }}
                   formatter={(v: number) => formatCurrency(v, currency)}
                 />
-                <Area type="monotone" dataKey="earnings" stroke="oklch(0.7 0.2 45)" strokeWidth={3} fill="url(#fillGrad)" />
+                <Area type="monotone" dataKey="earnings" stroke="var(--chart-1)" strokeWidth={3} fill="url(#fillGrad)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -241,7 +242,7 @@ function Dashboard() {
                     </div>
                   </TableCell>
                   <TableCell className="hidden sm:table-cell">
-                    <span className={health === "Going well" ? "font-semibold text-emerald-700 dark:text-emerald-400" : health === "Needs push" ? "font-semibold text-amber-700 dark:text-amber-400" : "font-semibold text-rose-700 dark:text-rose-400"}>
+                    <span className={health === "Going well" ? "font-semibold text-accent-green" : health === "Needs push" ? "font-semibold text-accent-yellow" : "font-semibold text-accent-red"}>
                       {t(`health.${health}`)}
                     </span>
                   </TableCell>
@@ -249,11 +250,7 @@ function Dashboard() {
                 </TableRow>
               ))}
               {offerStats.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={5} className="py-8 text-center text-muted-foreground">
-                    {t("dashboard.noOfferData")}
-                  </TableCell>
-                </TableRow>
+                <EmptyState colSpan={5} message={t("dashboard.noOfferData")} />
               )}
             </TableBody>
           </Table>
@@ -297,9 +294,7 @@ function Dashboard() {
                 );
               })}
               {recent.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={5} className="py-8 text-center text-muted-foreground">{t("payments.noPayments")}</TableCell>
-                </TableRow>
+                <EmptyState colSpan={5} message={t("payments.noPayments")} />
               )}
             </TableBody>
           </Table>

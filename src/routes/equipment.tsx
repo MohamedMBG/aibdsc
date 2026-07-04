@@ -4,6 +4,7 @@ import { AlertTriangle, Dumbbell, Pencil, Plus, Trash2, Wrench } from "lucide-re
 import { toast } from "sonner";
 import { z } from "zod";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatCard } from "@/components/StatCard";
 import { StatusBadge } from "@/components/StatusBadge";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
@@ -215,9 +216,7 @@ function EquipmentPage() {
                 );
               })}
               {!isLoading && equipment.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={7} className="py-8 text-center text-muted-foreground">{t("equipment.noEquipment")}</TableCell>
-                </TableRow>
+                <EmptyState colSpan={7} message={t("equipment.noEquipment")} />
               )}
             </TableBody>
           </Table>

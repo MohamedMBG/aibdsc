@@ -4,6 +4,7 @@ import { Pencil, Plus, Power, ShieldCheck, Trash2, UserCog, Users as UsersIcon, 
 import { toast } from "sonner";
 import { z } from "zod";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatCard } from "@/components/StatCard";
 import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription,
@@ -216,7 +217,7 @@ function StaffTab() {
                           onClick={() => updateStaff.mutate({ id: member.id, data: { active: !member.active } })}
                           title={member.active ? t("staff.deactivate") : t("staff.activate")}
                         >
-                          <Power className={member.active ? "h-4 w-4 text-amber-600 dark:text-amber-400" : "h-4 w-4 text-emerald-600 dark:text-emerald-400"} />
+                          <Power className={member.active ? "h-4 w-4 text-accent-yellow" : "h-4 w-4 text-accent-green"} />
                         </Button>
                         <Button variant="ghost" size="icon" onClick={() => setDeleteId(member.id)}><Trash2 className="h-4 w-4 text-rose-600" /></Button>
                       </>
@@ -225,7 +226,7 @@ function StaffTab() {
                 </TableRow>
               ))}
               {!isLoading && staff.length === 0 && (
-                <TableRow><TableCell colSpan={4} className="py-8 text-center text-muted-foreground">{t("staff.noStaff")}</TableCell></TableRow>
+                <EmptyState colSpan={4} message={t("staff.noStaff")} />
               )}
             </TableBody>
           </Table>
@@ -404,7 +405,7 @@ function RolesTab() {
                 </TableRow>
               ))}
               {!isLoading && roles.length === 0 && (
-                <TableRow><TableCell colSpan={3} className="py-8 text-center text-muted-foreground">{t("role.noRoles")}</TableCell></TableRow>
+                <EmptyState colSpan={3} message={t("role.noRoles")} />
               )}
             </TableBody>
           </Table>
@@ -529,7 +530,7 @@ function PerformanceTab() {
                 </TableRow>
               ))}
               {!isLoading && performance.length === 0 && (
-                <TableRow><TableCell colSpan={8} className="py-8 text-center text-muted-foreground">{t("staff.noStaff")}</TableCell></TableRow>
+                <EmptyState colSpan={8} message={t("staff.noStaff")} />
               )}
             </TableBody>
           </Table>

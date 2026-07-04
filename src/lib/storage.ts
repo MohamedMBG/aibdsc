@@ -1,15 +1,15 @@
 import type { Client, Payment, ReminderLog, Settings, SubscriptionType } from "./types";
 
 const KEYS = {
-  clients: "7up_clients",
-  payments: "7up_payments",
-  reminders: "7up_reminders",
-  settings: "7up_settings",
-  seeded: "7up_seeded_v1",
+  clients: "aibdsc_clients",
+  payments: "aibdsc_payments",
+  reminders: "aibdsc_reminders",
+  settings: "aibdsc_settings",
+  seeded: "aibdsc_seeded_v1",
 };
 
 export const DEFAULT_SETTINGS: Settings = {
-  gymName: "7up Gym",
+  gymName: "AIBDSC",
   monthlyPrice: 45,
   annualPrice: 480,
   reminderDays: 7,

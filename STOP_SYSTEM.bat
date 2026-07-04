@@ -1,10 +1,10 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title Gym System - Stopping
+title AIBDSC - Stopping
 
 echo ==========================================================
-echo   Stopping your Gym Management System
+echo   Stopping AIBDSC Management Platform
 echo ==========================================================
 echo.
 

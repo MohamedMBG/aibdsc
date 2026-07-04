@@ -1,5 +1,5 @@
 ===========================================================
-   GYM MANAGEMENT SYSTEM - SIMPLE GUIDE
+   AIBDSC - SIMPLE GUIDE
 ===========================================================
 
 You do NOT need to install any programming tools.
@@ -35,7 +35,7 @@ You only need ONE free program: Docker Desktop.
 - When it is ready, your web browser opens automatically.
 
   Website address:  http://localhost:5173
-  Login email:      admin@gym.local
+  Login email:      admin@aibdsc.local
   Login password:   admin12345
 
   (You can change the password later from inside the app.)

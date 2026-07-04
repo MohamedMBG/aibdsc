@@ -58,7 +58,7 @@ function ReportsPage() {
     { name: t("status.Unpaid"), value: clients.filter((c) => c.paymentStatus === "Unpaid").length },
   ];
 
-  const COLORS = ["oklch(0.72 0.19 52)", "oklch(0.86 0.17 88)", "oklch(0.62 0.22 27)"];
+  const COLORS = ["var(--chart-4)", "var(--chart-5)", "var(--chart-3)"];
 
   return (
     <div className="space-y-6">
@@ -92,14 +92,14 @@ function ReportsPage() {
         <div className="h-72 w-full">
           <ResponsiveContainer>
             <BarChart data={monthly}>
-              <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.93 0.01 80)" />
-              <XAxis dataKey="month" stroke="oklch(0.5 0.03 60)" fontSize={12} />
-              <YAxis stroke="oklch(0.5 0.03 60)" fontSize={12} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+              <XAxis dataKey="month" stroke="var(--muted-foreground)" fontSize={12} />
+              <YAxis stroke="var(--muted-foreground)" fontSize={12} />
               <Tooltip
-                contentStyle={{ borderRadius: 12, border: "1px solid oklch(0.93 0.01 80)" }}
+                contentStyle={{ borderRadius: 12, border: "1px solid var(--border)" }}
                 formatter={(v: number) => formatCurrency(v, currency)}
               />
-              <Bar dataKey="earnings" fill="oklch(0.78 0.18 60)" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="earnings" fill="var(--chart-1)" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

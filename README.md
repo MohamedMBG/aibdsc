@@ -1,4 +1,4 @@
-# Energetic Gym Ops
+# AIBDSC
 
 ## Local setup
 
@@ -11,7 +11,7 @@ npm run dev:local
 What it does:
 - installs root and backend dependencies
 - creates `backend/.env` if missing
-- creates the `energetic_gym_ops` database if it does not exist
+- creates the `aibdsc` database if it does not exist
 - applies the Drizzle schema
 - creates the first owner account on a fresh database
 - writes the login info to `LOCAL_LOGIN.md`
@@ -20,10 +20,10 @@ What it does:
 Defaults:
 - frontend API URL: `http://localhost:3001`
 - backend port: `3001`
-- database name: `energetic_gym_ops`
+- database name: `aibdsc`
 - postgres user: `postgres`
-- owner email: `admin@7upgym.local`
-- owner password: `GymOps!2026`
+- owner email: `admin@aibdsc.local`
+- owner password: `Aibdsc!2026`
 
 Optional environment variables:
 - `PGHOST`

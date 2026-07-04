@@ -153,7 +153,7 @@ function defaultDatabaseUrl() {
   const password = process.env.PGPASSWORD || '';
   const host = process.env.PGHOST || 'localhost';
   const port = process.env.PGPORT || '5432';
-  const database = process.env.APP_DB_NAME || 'energetic_gym_ops';
+  const database = process.env.APP_DB_NAME || 'aibdsc';
 
   const url = new URL(`postgresql://${host}`);
   url.username = username;
@@ -252,9 +252,9 @@ async function ensureDatabase(psqlPath, databaseUrl) {
 
 function defaultOwner() {
   return {
-    gymName: process.env.APP_GYM_NAME || '7up Gym',
-    email: process.env.APP_OWNER_EMAIL || 'admin@7upgym.local',
-    password: process.env.APP_OWNER_PASSWORD || 'GymOps!2026',
+    gymName: process.env.APP_GYM_NAME || 'AIBDSC',
+    email: process.env.APP_OWNER_EMAIL || 'admin@aibdsc.local',
+    password: process.env.APP_OWNER_PASSWORD || 'Aibdsc!2026',
   };
 }
 

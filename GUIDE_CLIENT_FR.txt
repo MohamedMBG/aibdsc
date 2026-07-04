@@ -1,5 +1,5 @@
 ===========================================================
-   SYSTÈME DE GESTION DE SALLE DE SPORT
+   AIBDSC
    GUIDE D'INSTALLATION SIMPLE (Windows)
 ===========================================================
 
@@ -23,10 +23,10 @@ Un seul programme gratuit est nécessaire : Docker Desktop.
 ÉTAPE 2 — TÉLÉCHARGER LE PROJET DEPUIS GITHUB
 -----------------------------------------------------------
 1. Ouvrez ce lien :
-   https://github.com/MohamedMBG/energetic-gym-ops
+   https://github.com/MohamedMBG/aibdsc
 2. Cliquez sur le bouton vert « Code ».
 3. Cliquez sur « Download ZIP ».
-4. Le fichier « energetic-gym-ops-main.zip » se télécharge.
+4. Le fichier « aibdsc-main.zip » se télécharge.
 
 
 -----------------------------------------------------------
@@ -49,7 +49,7 @@ Un seul programme gratuit est nécessaire : Docker Desktop.
 4. Quand c'est prêt, votre navigateur s'ouvre tout seul.
 
    Adresse du site :   http://localhost:5173
-   E-mail :            admin@gym.local
+   E-mail :            admin@aibdsc.local
    Mot de passe :      admin12345
 
    (Vous pourrez changer le mot de passe dans l'application.)
@@ -92,7 +92,7 @@ Un seul programme gratuit est nécessaire : Docker Desktop.
 -----------------------------------------------------------
 RÉSUMÉ RAPIDE
 -----------------------------------------------------------
-Télécharger -> https://github.com/MohamedMBG/energetic-gym-ops (Code > Download ZIP)
+Télécharger -> https://github.com/MohamedMBG/aibdsc (Code > Download ZIP)
 Démarrer    -> START_SYSTEM.bat
 Arrêter     -> STOP_SYSTEM.bat
 Réinitialiser -> RESET_DATABASE.bat

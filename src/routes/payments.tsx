@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { PageHeader } from "@/components/PageHeader";
+import { EmptyState } from "@/components/EmptyState";
 import { StatusBadge } from "@/components/StatusBadge";
 import { StatCard } from "@/components/StatCard";
 import { Card } from "@/components/ui/card";
@@ -152,9 +153,7 @@ function PaymentsPage() {
                 </TableRow>
               ))}
               {!isLoading && sorted.length === 0 && (
-                <TableRow>
-                  <TableCell colSpan={6} className="py-8 text-center text-muted-foreground">{t("payments.noPayments")}</TableCell>
-                </TableRow>
+                <EmptyState colSpan={6} message={t("payments.noPayments")} />
               )}
             </TableBody>
           </Table>
