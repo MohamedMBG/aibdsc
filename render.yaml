@@ -1,0 +1,31 @@
+# Render Blueprint — backend only (Express + Drizzle + postgres-js).
+# Frontend runs on Vercel, database on Neon. Set the `sync: false` vars in the
+# Render dashboard after the first deploy.
+services:
+  - type: web
+    name: aibdsc-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    # ponytail: --include=dev is required — NODE_ENV=production makes npm drop
+    # devDeps (typescript, drizzle-kit), which the build and startup both need.
+    buildCommand: npm ci --include=dev && npm run build
+    # drizzle-kit push runs on every boot: idempotent schema sync, no migration
+    # files to manage. Switch to `drizzle-kit migrate` if you need history.
+    startCommand: npx drizzle-kit push --force && node dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL # Neon pooled connection string, must include ?sslmode=require
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL # https://<your-project>.vercel.app  (comma-separate for multiple)
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD # min 8 chars
+        sync: false
+      - key: ADMIN_GYM_NAME
+        value: AIBDSC
