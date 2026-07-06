@@ -57,7 +57,7 @@ function AuthenticatedLayout({ children }: { children: React.ReactNode }) {
             <SheetTrigger className="rounded-lg p-2 text-muted-foreground hover:bg-accent lg:hidden">
               <Menu className="h-5 w-5" />
             </SheetTrigger>
-            <SheetContent side="left" className="w-64 p-0">
+            <SheetContent side={locale === "ar" ? "right" : "left"} className="w-64 p-0">
               <SheetTitle className="sr-only">{t("app.navigation")}</SheetTitle>
               <AppSidebar onNavigate={() => setOpen(false)} />
             </SheetContent>
@@ -66,6 +66,13 @@ function AuthenticatedLayout({ children }: { children: React.ReactNode }) {
           <div className="flex-1" />
 
           <div className="flex items-center rounded-xl border border-border bg-background p-1 text-xs font-semibold">
+            <button
+              type="button"
+              onClick={() => setLocale("ar")}
+              className={`rounded-lg px-2.5 py-1.5 transition-colors ${locale === "ar" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent"}`}
+            >
+              AR
+            </button>
             <button
               type="button"
               onClick={() => setLocale("en")}

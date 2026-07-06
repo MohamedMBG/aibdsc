@@ -13,7 +13,6 @@ import { AppLayout } from "@/components/AppLayout";
 import { Toaster } from "@/components/ui/sonner";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 import { ThemeProvider, THEME_INIT_SCRIPT } from "@/lib/theme";
-import logoUrl from "@/assets/business-logo.png";
 
 function NotFoundComponent() {
   const { t } = useI18n();
@@ -79,11 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AIBDSC - Association Ibn Al Bannae de Développement Sportif et Culturel" },
-      { name: "description", content: "Official management platform of AIBDSC: members, subscriptions, payments and reminders." },
+      { title: "AIBDSC - جمعية ابن البناء للتنمية الرياضية والثقافية" },
+      { name: "description", content: "منصة إدارة AIBDSC للمنخرطين والاشتراكات والمدفوعات والتذكيرات." },
       { name: "author", content: "AIBDSC" },
-      { property: "og:title", content: "AIBDSC - Association Ibn Al Bannae de Développement Sportif et Culturel" },
-      { property: "og:description", content: "Manage clients, subscriptions, payments and reminders in one place." },
+      { property: "og:title", content: "AIBDSC - جمعية ابن البناء للتنمية الرياضية والثقافية" },
+      { property: "og:description", content: "إدارة المنخرطين والاشتراكات والمدفوعات والتذكيرات في مكان واحد." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -95,7 +94,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "icon",
-        href: logoUrl,
+        type: "image/png",
+        sizes: "64x64",
+        href: "/favicon.png",
+      },
+      {
+        rel: "shortcut icon",
+        type: "image/png",
+        href: "/favicon.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
       },
     ],
   }),
@@ -107,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="ar" dir="rtl" className="dark">
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
